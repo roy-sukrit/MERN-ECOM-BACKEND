@@ -29,7 +29,7 @@ router.post('/user/address',authCheck ,saveAddress)
 router.post('/user/cart/coupon',authCheck , applyCouponToUserCart)
 
 //oprder
-router.post('/user/orders', authCheck, createOrder)
+router.post('/user/order', authCheck, createOrder)
 
 
 //wishlist
