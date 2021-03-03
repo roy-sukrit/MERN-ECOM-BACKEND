@@ -3,7 +3,7 @@ ECommerce application made with MERN stack , deployed in digital ocean feel free
 
 ![](src_ecom.gif)
 
-## This code is the backend of the deployed Ecommerce application check description , using firebase admin , cloudinary for images and middlewares makes this code very beaitiful and concise credit to Ryan to help out with this.
+## This code is the backend of the deployed Ecommerce application check description , using firebase admin , cloudinary for images and middlewares makes this code very beautiful and concise credit to Ryan to help out with this.
 This Code is beginner friendly!
 
 ### How to run the code?
