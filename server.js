@@ -8,8 +8,7 @@ require("dotenv").config();
 
 // app
 const app = express();
-// app.use(cors());
-app.use(cors({origin: '*'}));
+app.use(cors());
 // db
 mongoose
   .connect(process.env.DATABASE, {
