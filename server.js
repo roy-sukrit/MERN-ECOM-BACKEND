@@ -8,6 +8,8 @@ require("dotenv").config();
 
 // app
 const app = express();
+// app.use(cors());
+app.use(cors({ origin: "https://roysukrit-ecom.herokuapp.com/", credentials: true }))
 
 // db
 mongoose
@@ -23,7 +25,6 @@ mongoose
 // middlewares
 app.use(morgan("dev"));
 app.use(bodyParser.json({limit: '5mb'}))
-app.use(cors());
 
 // routes middleware
 readdirSync("./routes").map((r) =>
