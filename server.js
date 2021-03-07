@@ -9,13 +9,11 @@ require("dotenv").config();
 // app
 const app = express();
 //app.use(cors());
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }))
-
-// parse application/json
-app.use(bodyParser.json())
-
-app.use(cors());
+var corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
+}
+app.use(cors(corsOptions));
 // db
 mongoose
   .connect(process.env.DATABASE, {
