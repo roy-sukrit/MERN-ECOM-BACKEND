@@ -9,8 +9,7 @@ require("dotenv").config();
 // app
 const app = express();
 // app.use(cors());
-app.use(cors({ origin: "https://roysukrit-ecom.herokuapp.com", credentials: true }))
-
+app.use(cors({origin: '*'}));
 // db
 mongoose
   .connect(process.env.DATABASE, {
