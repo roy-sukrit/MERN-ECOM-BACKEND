@@ -8,6 +8,13 @@ require("dotenv").config();
 
 // app
 const app = express();
+//app.use(cors());
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }))
+
+// parse application/json
+app.use(bodyParser.json())
+
 app.use(cors());
 // db
 mongoose
