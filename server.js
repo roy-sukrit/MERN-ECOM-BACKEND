@@ -9,7 +9,23 @@ require("dotenv").config();
 // app
 const app = express();
 
-app.use(cors());
+//app.use(cors());
+const corsOpts = {
+  origin: '*',
+ 
+  methods: [
+    'GET',
+    'POST',
+    'DELETE',
+    'PUT',
+  ],
+ 
+  allowedHeaders: [
+    'Content-Type',
+  ],
+};
+ 
+app.use(cors(corsOpts));
 
 // db
 mongoose
