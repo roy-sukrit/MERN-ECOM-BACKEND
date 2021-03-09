@@ -9,6 +9,24 @@ require("dotenv").config();
 // app
 const app = express();
 
+//app.use(cors());
+const corsOpts = {
+  origin: '*',
+ 
+  methods: [
+    'GET',
+    'POST',
+    'DELETE',
+    'PUT',
+  ],
+ 
+  allowedHeaders: [
+    'Content-Type',
+  ],
+};
+ 
+app.use(cors(corsOpts));
+
 // db
 mongoose
   .connect(process.env.DATABASE, {
@@ -22,8 +40,7 @@ mongoose
 
 // middlewares
 app.use(morgan("dev"));
-app.use(bodyParser.json({ limit: "2mb" }));
-app.use(cors());
+app.use(bodyParser.json({limit: '5mb'}))
 
 // routes middleware
 readdirSync("./routes").map((r) =>
