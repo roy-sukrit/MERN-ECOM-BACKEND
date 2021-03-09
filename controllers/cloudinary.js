@@ -1,6 +1,11 @@
 const cloudinary = require('cloudinary')
 
-//config
+
+//^ 1. UPLOAD POST THE IMAGES AND GET ID AND URL OF IMAGE
+//& 2. DELETE BASED ON PUBLIC ID
+
+
+//^config
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,

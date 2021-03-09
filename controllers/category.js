@@ -2,6 +2,13 @@ const Category =require ('../models/category')
 const Sub =require ('../models/sub')
 const Product =require ('../models/product')
 
+//^ 1. CATEGORY CREATE 
+//& 2. GET CATEGORY LIST
+//* 3. FIND - SLUG
+//! 4. UPDATE - SLUG
+//& 5. DELETE - SLUG
+//^ 6. GET SUB CATEGORY BASED ON PARENT ._ID
+
 //^ Install slugify
 const slugify = require('slugify')
 
@@ -31,7 +38,7 @@ exports.list = async (req,res)=>{
 
 //^create read - single
 exports.read = async (req,res)=>{
- let category = await (await Category.findOne({slug:req.params.slug}))
+ let category = await Category.findOne({slug:req.params.slug})
 
 const products= await Product.find({category})
  .populate('category')
