@@ -30,7 +30,7 @@ app.use(function(req, res, next) {
   next();
 });
  
-app.use(cors(corsOpts));
+// app.use(cors(corsOpts));
 
 // db
 mongoose
