@@ -25,8 +25,10 @@ const corsOpts = {
   ],
 };
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // keep this if your api accepts cross-origin requests
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, X-Access-Token");
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
  
