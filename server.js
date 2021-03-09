@@ -24,6 +24,11 @@ const corsOpts = {
     'Content-Type',
   ],
 };
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // keep this if your api accepts cross-origin requests
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, X-Access-Token");
+  next();
+});
  
 app.use(cors(corsOpts));
 
@@ -40,7 +45,6 @@ mongoose
 
 // middlewares
 app.use(morgan("dev"));
-app.use(bodyParser.json({limit: '5mb'}))
 
 // routes middleware
 readdirSync("./routes").map((r) =>
